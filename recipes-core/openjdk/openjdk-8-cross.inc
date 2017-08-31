@@ -18,7 +18,7 @@ PATCHES_URI_append = "\
 
 DEPENDS = "\
     openjdk-8-native zip-native ant-native libxslt \
-    jpeg libpng krb5 libffi fontconfig freetype \
+    jpeg libpng libffi fontconfig freetype \
 "
 
 PRIVATE_LIBS = "\
@@ -43,6 +43,7 @@ PACKAGECONFIG[jce] = "--enable-unlimited-crypto,,"
 
 PACKAGECONFIG[zip] = "--with-zlib=system,--with-zlib=bundled,zlib,"
 PACKAGECONFIG[gif] = "--with-giflib=system,--with-giflib=bundled,giflib,"
+PACKAGECONFIG[krb5] = ",,,"
 
 export WANT_LLVM_RELEASE = "3.5.2"
 PACKAGECONFIG[zero] = "--with-jvm-variants=zero,,,"

@@ -5,7 +5,7 @@ INC_PR = "r1"
 
 DEPENDS = "virtual/javac-native virtual/java-native classpath-native \
            rhino-native ant-native libxslt-native attr-native \
-           giflib-native jpeg-native libpng-native \
+           jpeg-native libpng-native \
            glib-2.0-native freetype-native zlib-native \
            fontconfig-native zip-native \
 	   unzip-native make-native util-linux-native\
@@ -13,6 +13,7 @@ DEPENDS = "virtual/javac-native virtual/java-native classpath-native \
 
 PACKAGECONFIG ??= ""
 PACKAGECONFIG[x11] = ",--disable-headful,libx11-native xproto-native libxt-native libxext-native libxrender-native"
+PACKAGECONFIG[gif] = ",--disable-system-gif, giflib"
 
 OEMAKE_BUILD_HEADLESS_ONLY = "${@bb.utils.contains('PACKAGECONFIG', 'x11', '', 'BUILD_HEADLESS_ONLY=1', d)}"
 CFLAGS_append = "${@bb.utils.contains('PACKAGECONFIG', 'x11', '', ' -DHEADLESS=true', d)}"

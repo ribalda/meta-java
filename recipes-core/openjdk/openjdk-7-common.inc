@@ -26,10 +26,10 @@ PROVIDES += "${JDKPN}"
 DEPENDS = " \
     icedtea7-native zip-native ant-native \
     zlib libxslt-native \
-    jpeg libpng giflib \
+    jpeg libpng \
     gtk+ glib-2.0 \
     cups fontconfig \
-    rhino krb5 \
+    rhino \
     libxt libxinerama libxrender libxtst libxi \
     freetype alsa-lib libffi \
     attr \
@@ -66,6 +66,8 @@ EXTRA_OECONF = " \
     --disable-hotspot-tests \
     --disable-langtools-tests \
     --disable-jdk-tests \
+    --disable-system-kerberos \
+    --disable-system-gif \
     --disable-docs \
     --disable-nss \
     --disable-system-lcms \
