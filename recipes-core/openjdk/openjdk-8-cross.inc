@@ -3,7 +3,7 @@ JRE_HOME = "${libdir_jvm}/openjre-8"
 
 DEPENDS = "\
     openjdk-8-native zip-native ant-native libxslt \
-    krb5 libffi fontconfig freetype \
+    libffi fontconfig freetype \
 "
 
 PRIVATE_LIBS = "\
