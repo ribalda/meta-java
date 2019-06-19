@@ -67,7 +67,7 @@ DEPENDS = " \
     jpeg libpng giflib \
     gtk+ glib-2.0 \
     cups fontconfig \
-    rhino krb5 \
+    rhino \
     libxt libxinerama libxrender libxtst libxi \
     freetype alsa-lib libffi \
     attr \
@@ -134,6 +134,7 @@ EXTRA_OECONF = " \
 EXTRA_OECONF += " \
     --disable-system-pcsc \
     --disable-system-sctp \
+    --disable-system-kerberos \
 "
 
 do_configure_prepend() {
