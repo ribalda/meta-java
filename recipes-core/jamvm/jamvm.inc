@@ -35,7 +35,7 @@ EXTRA_OECONF = "--with-classpath-install-dir=${prefix} --libdir=${libdir}/jamvm 
 CFLAGS_append_class-native = " -DDEFAULT_MAX_HEAP=1024*MB"
 
 # Enforce usage of ecj-initial.
-EXTRA_OEMAKE = "JAVAC=${STAGING_BINDIR_NATIVE}/ecj-initial \
+EXTRA_OEMAKE = "JAVAC=${STAGING_BINDIR_NATIVE}/ecj-bootstrap \
                 GLIBJ_ZIP=${STAGING_DATADIR_NATIVE}/classpath/glibj.zip \
                "
 
