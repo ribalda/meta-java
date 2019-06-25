@@ -34,8 +34,11 @@ do_compile() {
     oe_makeclasspath cp -s xercesImpl xalan2
     cp=build:$cp
 
-    mv ${WORKDIR}/git/jaxen ${WORKDIR}/jaxen-${PV_jaxen}
-    rm -rf ${WORKDIR}/git
+    if [ -d ${WORKDIR}/git ] ; then
+        mv ${WORKDIR}/git/jaxen ${WORKDIR}/jaxen-${PV_jaxen}
+        rm -rf ${WORKDIR}/git
+    fi
+
     scp="${WORKDIR}/jaxen-${PV_jaxen}/src/java/main"
 
     javac -sourcepath src:$scp -cp $cp -d build `find src -name "*.java" -and -not \( -wholename "*tests*" -or -wholename "*samples*" -or -wholename "*tools*" \)`
