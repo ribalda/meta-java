@@ -11,7 +11,7 @@ DEPENDS = "virtual/javac-native virtual/java-native classpath-native \
 	   unzip-native make-native util-linux-native\
           "
 
-PACKAGECONFIG ??= ""
+PACKAGECONFIG ??= "x11"
 PACKAGECONFIG[x11] = ",--disable-headful,libx11-native xorgproto-native libxt-native libxext-native libxrender-native"
 
 OEMAKE_BUILD_HEADLESS_ONLY = "${@bb.utils.contains('PACKAGECONFIG', 'x11', '', 'BUILD_HEADLESS_ONLY=1', d)}"
